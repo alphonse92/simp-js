@@ -8,7 +8,7 @@ export default function createTypo(Component) {
 
     const extraProps = { ...props };
     if (selectedFont) {
-      extraProps.fontStyle = selectedFont;
+      extraProps.fontFamily = selectedFont;
     }
 
     if (size) {

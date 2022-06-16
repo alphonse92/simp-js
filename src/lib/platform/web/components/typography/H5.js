@@ -5,10 +5,11 @@ import createTypo from "./createTypo";
 export default createTypo(
   // eslint-disable-next-line
   createStaticSimp(createSimpFrom(<h5 />), {
-    fontSize: "var(--h5)",
-    fontWeight: 700,
-    marginVertical: "var(--m)",
-    letterSpacing: "1.5px",
+    text: true,
+    title: true,
+    h5: true,
+    
+    
   },
   'simp-h5',)
 );

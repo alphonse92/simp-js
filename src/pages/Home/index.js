@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Container from "../../lib/platform/web/components/Container";
 import Span from "../../lib/platform/web/components/typography/Span";
@@ -10,33 +10,16 @@ import Vertical from "../../lib/platform/web/components/Vertical";
 import H1 from "../../lib/platform/web/components/typography/H1";
 import Horizontal from "../../lib/platform/web/components/Horizontal";
 import MePhoto from "./me";
-import Pseudo from "../../lib/platform/web/components/Pseudo";
 import MediaQuery from "../../lib/platform/web/components/MediaQuery";
-import css from "./styles.module.css";
 
 export default function HomePage(props) {
-  const colors = ["red", "white", "yellow", "blue", "green"];
-  const [colorIdx, setColorIdx] = useState(0);
-  const onChangeColor = () => setColorIdx((current) => current + 1);
-
-  const selectedColor = colors[colorIdx % colors.length];
-  const selectedBgColor = colors[(colorIdx + 1) % colors.length];
-  const selectedHoverBgColor = colors[(colorIdx + 2) % colors.length];
-
   return (
-    <Container
-      flex
-      center
-      bgColor="var(--sleepycloud)"
-      margin="var(--m)"
-      className={css.blueBorder}
-    >
-      <Center>
+    <Container flex center bgColor="var(--sleepycloud)" margin="var(--m)">
+      <Container margin="var(--m)">
         <Horizontal
-          justifyContent="space-between"
           queries={[
             <MediaQuery
-              query="@media only screen and (max-width: 1200px)"
+              query="@media only screen and (max-width: 1024px)"
               flexDirection="column"
             />,
           ]}
@@ -45,48 +28,43 @@ export default function HomePage(props) {
             center
             queries={[
               <MediaQuery
-                query="@media only screen and (max-width: 1200px)"
-                border="1px solid red"
-                color="green"
+                query="@media only screen and (max-width: 1024px)"
+                fontAlign="center"
               />,
             ]}
-            pseudo={[<Pseudo name=":hover" border="1px solid black" />]}
           >
             <H1>Hi, my</H1>
 
-            <H1 pseudo={[<Pseudo name=":hover" color="blue" />]}>
+            <H1 marginBottom="var(--xl)">
               name is{" "}
               <Span
                 highEmphasis
-                pseudo={[<Pseudo name=":hover" color="red" />]}
+                padding="var(--m)"
+                border="3px solid var(--sleepycloudEmphasis)"
               >
                 Alejandro
               </Span>
             </H1>
 
-            <Subtitle>I'm a software developer from Colombia. </Subtitle>
-            <Subtitle2>I'm a software developer from Colombia. </Subtitle2>
-            <Text
-              color={selectedColor}
-              bgColor={selectedBgColor}
-              pseudo={[<Pseudo name=":hover" bgColor={selectedHoverBgColor} />]}
-            >
-              I'm a software developer from Colombia.{" "}
-            </Text>
-            <button onClick={onChangeColor}>change color</button>
+            <Subtitle>
+              I'm a <Span emphasis>software developer</Span> from Medellin,
+              Colombia.
+            </Subtitle>
           </Vertical>
 
-          <Vertical center>
-            <MePhoto
-              size="420px"
-              margin="calc(var(--xl) * 2)"
-              borderRadius="100%"
-              overflow="hidden"
-              border="13px solid var(--background)"
-            />
-          </Vertical>
+          <Center>
+            <Container margin="var(--xl)">
+              <MePhoto
+                size="420px"
+                // margin="calc(var(--xl) * 2)"
+                borderRadius="100%"
+                overflow="hidden"
+                border="13px solid var(--background)"
+              />
+            </Container>
+          </Center>
         </Horizontal>
-      </Center>
+      </Container>
     </Container>
   );
 }

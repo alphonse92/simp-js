@@ -7,10 +7,10 @@ export default createTypo(
   createStaticSimp(
     createSimpFrom(<h3 />),
     {
-      fontSize: "var(--h3)",
-      fontWeight: 300,
-      marginVertical: "var(--m)",
-      letterSpacing: "1.5px",
+      text: true,
+      title: true,
+      h3: true,
+     
     },
     "simp-h3"
   )

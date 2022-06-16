@@ -1,9 +1,9 @@
-import webTheme from "./web/theme";
+import * as webTheme from "./web/theme";
 
-let theme = {};
+let obj = {};
 
 if (window) {
-  theme = webTheme;
+  obj = webTheme;
 }
 
-export default theme;
+export const { theme, mutations } = obj;

@@ -1,4 +1,4 @@
-export default {
+export const theme = {
   color: "black",
   background: "gray",
   font: "var(--lato)",
@@ -25,4 +25,48 @@ export default {
     xl: "rem",
   },
   colors: {},
+};
+
+export const mutations = {
+  title: {
+    marginVertical: "var(--m)",
+  },
+  subtitle: {
+    margin: "var(--none)",
+  },
+  h1: {
+    fontSize: "var(--h1)",
+    fontWeight: 400,
+  },
+  h2: {
+    fontSize: "var(--h2)",
+    fontWeight: 400,
+  },
+  h3: {
+    fontSize: "var(--h3)",
+    fontWeight: 400,
+  },
+  h4: {
+    fontSize: "var(--h4)",
+    fontWeight: 400,
+  },
+  h5: {
+    fontSize: "var(--h5)",
+    fontWeight: 700,
+  },
+  h6: {
+    fontSize: "var(--h6)",
+    fontWeight: 900,
+  },
+  small: {
+    fontSize: "var(--small)",
+  },
+  subtitle1: {
+    fontSize: "var(--default)",
+    fontWeight: 300,
+  },
+  subtitle2: {
+    fontSize: "var(--extra)",
+    fontWeight: 400,
+  },
 };

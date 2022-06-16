@@ -8,10 +8,9 @@ export default createTypo(
     // eslint-disable-next-line
     createSimpFrom(<h1 />),
     {
-      fontSize: "var(--h1)",
-      fontWeight: 300,
-      marginVertical: "var(--m)",
-      letterSpacing: "1.5px",
+      text: true,
+      title: true,
+      h1: true,
     },
     "simp-h1"
   )

@@ -4,9 +4,12 @@ import createStaticSimp from "../../../../createStaticSimp";
 import createTypo from "./createTypo";
 export default createTypo(
   // eslint-disable-next-line
-  createStaticSimp(createSimpFrom(<p />), {
-    fontSize: "var(--small)",
-    marginVertical: "var(--xs)",
-  },
-  'simp-small',)
+  createStaticSimp(
+    createSimpFrom(<p />),
+    {
+      text,
+      small: true,
+    },
+    "simp-small"
+  )
 );

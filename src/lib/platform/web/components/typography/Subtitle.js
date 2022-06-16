@@ -7,10 +7,9 @@ export default createTypo(
   createStaticSimp(
     createSimpFrom(<p />),
     {
-      fontSize: "var(--extra)",
-      fontWeight: 400,
-      margin: "var(--none)",
-      letterSpacing: "1.5px",
+      text: true,
+      subtitle: true,
+      subtitle1: true,
     },
     "simp-p-subtitle"
   )

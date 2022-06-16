@@ -1,9 +1,16 @@
 export const mutations = {
+  // overriding title mutations
+  title: {
+    fontFamily: "var(--fontTitles)",
+    marginVertical: "var(--none)",
+  },
   emphasis: {
     fontWeight: "400",
+    color: "var(--sleepycloudEmphasis)",
   },
   highEmphasis: {
     fontWeight: "600",
+    color: "var(--sleepycloudEmphasis)",
   },
 };
 
@@ -11,19 +18,19 @@ export const theme = {
   // Override browser defaults: font, colors and background
   background: "var(--gooze)",
   color: "var(--sleepycloudFont)",
-  font: "var(--lato)",
+  font: "var(--fontRegular)",
   // Template configurations
   // All variables will be setted as css prop
   // The Hierarchy structure is just to keep it organized
   fonts: {
-    lato: "'Lato', 'sans-serif'",
-    robotoMono: "'Roboto Mono', monospace",
+    fontRegular: "'Lato', 'sans-serif'",
+    fontTitles: "'Roboto Slab', serif",
   },
   fontSizes: {
     // these values will override the default typography sizes
-    default: "1rem",
+    default: "1.25rem",
     small: "0.8rem",
-    extra: "1.25rem",
+    extra: "1.5rem",
     h1: "5rem",
     h2: "4rem",
     h3: "3rem",
@@ -48,8 +55,8 @@ export const theme = {
     //sleepycloud palette
     sleepycloud: "#e9f3fb",
     sleepycloudShadow: "#b1bfca",
-    sleepycloudFont: "#14558b",
-    sleepycloudEmphasis: "#375771",
+    sleepycloudFont: "#004278",
+    sleepycloudEmphasis: "#000c51",
   },
   // set here what you want
   globals: {},

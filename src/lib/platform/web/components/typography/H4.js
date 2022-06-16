@@ -8,10 +8,10 @@ export default createTypo(
   createStaticSimp(
     createSimpFrom(<h4 />),
     {
-      fontSize: "var(--h4)",
-      fontWeight: 400,
-      marginVertical: "var(--m)",
-      letterSpacing: "1.5px",
+      text: true,
+      title: true,
+      h4: true,
+      
     },
     "simp-h4"
   )

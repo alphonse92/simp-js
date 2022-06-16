@@ -1,7 +1,10 @@
 import React, { useState, useContext } from "react";
 import Platform from "./platform/platform";
 import setGlobals from "./platform/setGlobals";
-import defaultTheme from "./platform/theme";
+import {
+  theme as defaultTheme,
+  mutations as defaultMutations,
+} from "./platform/theme";
 export const themeContext = React.createContext(null);
 export const useTheme = function useTheme() {
   const context = useContext(themeContext);
@@ -17,25 +20,34 @@ export const useTheme = function useTheme() {
 };
 
 export default function ThemeProvider({
-  theme: defTheme,
-  mutations: defMutations,
+  theme: appTheme,
+  mutations,
   children,
   ...rest
 }) {
-  const [theme, setTheme] = useState(defTheme || {});
-  const [mutations, setMutations] = useState(defMutations || {});
-
+  const [theme, setTheme] = useState(appTheme || {});
+  const [appMutations, setAppMutations] = useState(mutations || {});
   const { colors = {} } = theme;
 
   const getColor = (def) => colors[def] || def;
 
   setGlobals({ ...defaultTheme, ...theme });
 
+  const extendedMutations = Object.entries(defaultMutations).reduce(
+    (acc, [key, value]) => {
+      if (acc[key]) {
+        return { ...acc, [key]: { ...value, ...acc[key] } };
+      }
+      return { ...acc, [key]: value };
+    },
+    { ...appMutations }
+  );
+
   const contextValue = {
     theme,
     setTheme,
-    mutations,
-    setMutations,
+    mutations: extendedMutations,
+    setMutations: setAppMutations,
     getColor,
   };
 

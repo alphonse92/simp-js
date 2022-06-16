@@ -4,5 +4,9 @@ import createStaticSimp from "../../../../createStaticSimp";
 import createTypo from "./createTypo";
 export default createTypo(
   // eslint-disable-next-line
-  createStaticSimp(createSimpFrom(<span />), {}, "simp-span")
+  createStaticSimp(
+    createSimpFrom(<span />),
+    { text: true, span: true },
+    "simp-span"
+  )
 );
