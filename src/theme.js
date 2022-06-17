@@ -4,6 +4,10 @@ export const mutations = {
     fontFamily: "var(--fontTitles)",
     marginVertical: "var(--none)",
   },
+  subtitle: {
+    fontFamily: "var(--fontTitles)",
+  },
+  // New mutations
   emphasis: {
     fontWeight: "400",
     color: "var(--sleepycloudEmphasis)",
@@ -20,7 +24,7 @@ export const theme = {
   color: "var(--sleepycloudFont)",
   font: "var(--fontRegular)",
   // Template configurations
-  // All variables will be setted as css prop
+  // All variables will be setted as css variables
   // The Hierarchy structure is just to keep it organized
   fonts: {
     fontRegular: "'Lato', 'sans-serif'",
@@ -28,15 +32,15 @@ export const theme = {
   },
   fontSizes: {
     // these values will override the default typography sizes
-    default: "1.25rem",
-    small: "0.8rem",
-    extra: "1.5rem",
-    h1: "5rem",
-    h2: "4rem",
-    h3: "3rem",
-    h4: "2.5rem",
-    h5: "2rem",
-    h6: "1.75rem",
+    default: "16px",
+    small: "14px",
+    extra: "20px",
+    h1: "86px",
+    h2: "60px",
+    h3: "48px",
+    h4: "34px",
+    h5: "24px",
+    h6: "20px",
   },
   spacing: {
     none: "none",
@@ -53,10 +57,15 @@ export const theme = {
     goozeDark: "#c2c2c2",
 
     //sleepycloud palette
-    sleepycloud: "#e9f3fb",
-    sleepycloudShadow: "#b1bfca",
-    sleepycloudFont: "#004278",
-    sleepycloudEmphasis: "#000c51",
+    sleepycloud: "#ebf0f6",
+    sleepycloudShadow: "#3f3d56",
+    sleepycloudFont: "#2f2e41",
+    sleepycloudEmphasis: "#2f2e41",
+
+    // redstone palette
+
+    redstone: "#ff6584",
+    redstoneEmphasis: "#de1c43",
   },
   // set here what you want
   globals: {},

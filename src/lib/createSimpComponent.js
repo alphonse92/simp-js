@@ -14,13 +14,9 @@ export default function createSimpComponent(Component) {
     useLayoutEffect(() => {
       if (pseudoId) {
         const ss = { name: pseudoId, styles: allStyles };
-        console.log("styling simp comp", pseudoId);
         addClass(ss);
       }
-    }, [
-      pseudoId,
-      ...Object.values(allStyles),
-    ]);
+    }, [pseudoId, ...Object.values(allStyles)]);
 
     const pseudoElements = !Array.isArray(pseudo) ? [pseudo] : pseudo;
     const queryElements = !Array.isArray(queries) ? [queries] : queries;

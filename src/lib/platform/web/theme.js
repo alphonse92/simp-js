@@ -62,11 +62,11 @@ export const mutations = {
     fontSize: "var(--small)",
   },
   subtitle1: {
-    fontSize: "var(--default)",
+    fontSize: "var(--extra)",
     fontWeight: 300,
   },
   subtitle2: {
-    fontSize: "var(--extra)",
+    fontSize: "var(--default)",
     fontWeight: 400,
   },
 };

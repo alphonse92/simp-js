@@ -51,7 +51,9 @@ export default function compileProps(props, { mutations, getColor }) {
   });
 
   const {
+    content,
     // layout
+    zIndex,
     opacity,
     position,
     display,
@@ -137,6 +139,7 @@ export default function compileProps(props, { mutations, getColor }) {
     lineHeight,
     textAlign,
     textDecoration,
+    textShadow,
 
     textTransform,
 
@@ -146,9 +149,11 @@ export default function compileProps(props, { mutations, getColor }) {
 
   const layoutStyles = {};
 
+  assign(layoutStyles, "content", content);
   assign(layoutStyles, "display", getDisplay(mutatedProps));
   assign(layoutStyles, "opacity", opacity);
   assign(layoutStyles, "position", position);
+  assign(layoutStyles, "zIndex", zIndex);
   assign(layoutStyles, "top", top);
   assign(layoutStyles, "left", left);
   assign(layoutStyles, "width", width);
@@ -273,6 +278,7 @@ export default function compileProps(props, { mutations, getColor }) {
   assign(typoStyles, "lineHeight", lineHeight);
   assign(typoStyles, "textAlign", textAlign);
   assign(typoStyles, "textDecoration", textDecoration);
+  assign(typoStyles, "textShadow", textShadow);
   assign(typoStyles, "textTransform", textTransform);
   assign(typoStyles, "color", getColor(color));
 

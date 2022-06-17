@@ -2,13 +2,7 @@ import React from "react";
 import Div from "./Div";
 import createStaticSimp from "../../../createStaticSimp";
 
-const BaseContainerComponent = createStaticSimp(
-  Div,
-  {
-    display: "flex",
-  },
-  "simp-container-base"
-);
+const BaseContainerComponent = createStaticSimp(Div, {}, "simp-container-base");
 
 export default function Container({
   flex,
@@ -21,6 +15,7 @@ export default function Container({
   const containerProps = {};
 
   if (flex) {
+    containerProps.display = "flex";
     containerProps.flex = 1;
   }
 

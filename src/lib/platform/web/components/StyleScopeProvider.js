@@ -46,17 +46,25 @@ export default function StyleScopeProvider(props) {
     }
   }, [idDef, sspStatic, getNextId]);
 
-  const addClass = ({ name, styles }) => {
-    if (!styleContextId) return;
-
+  const stylesToCss = (styles) => {
     const entries = Object.entries(styles);
 
-    if (!entries.length) return;
+    if (!entries.length) return null;
 
     const css = entries.reduce(
       (str, [key, value]) => str + `${key}:${value};`,
       ""
     );
+
+    return css;
+  };
+
+  const addClass = ({ name, styles }) => {
+    if (!styleContextId) return;
+
+    const css = stylesToCss(styles);
+
+    if (css === null) return;
 
     addStylesheet((snapshot) => ({
       ...snapshot,
@@ -70,14 +78,9 @@ export default function StyleScopeProvider(props) {
   const addMediaQuery = ({ id = styleContextId, query, styles }) => {
     if (!styleContextId) return;
 
-    const entries = Object.entries(styles);
+    const css = stylesToCss(styles);
 
-    if (!entries.length) return;
-
-    const css = entries.reduce(
-      (str, [key, value]) => str + `${key}:${value};`,
-      ""
-    );
+    if (css === null) return;
 
     addStylesheet((snapshot) => ({
       ...snapshot,
